@@ -21,3 +21,27 @@
 # Should package downloads have their MD5 hash verified prior
 # to unpacking and building?
 VERIFY_SRC_MD5=true
+
+# By default NTRT is built using all of your cores. If you would like
+# to statically specify the number of cores, you can simply uncomment the value
+# below.
+#
+# Note: No steps are taken to ensure that the number you provide is less
+# than your total number of cores. It shouldn't cause any problems if you pass
+# a number greater than your total core count, but there are no guarantees that is indeed
+# the case.
+#MAX_BUILD_CORES=1
+
+# ADDITIONAL_LIB_PATHS are paths that should be searched for lib files during compilation.
+# If you have let NTRTsim install all dependent packages, you can likely leave this empty.
+#
+# Note: If you wish to provide more than one path, separate each path with a semicolon.
+# e.g. ADDITIONAL_LIB_PATHS="/usr/lib;/home/myuser/secondLibDir"
+ADDITIONAL_LIB_PATHS=""
+
+# ADDITIONAL_INCLUDE_PATHS are paths that should be searched for header files during compilation.
+# If you have let NTRTsim install all dependent packages, you can likely leave this empty.
+#
+# Note: If you wish to provide more than one path, separate each path with a semicolon.
+# e.g. ADDITIONAL_INCLUDE_PATHS="/usr/include;/home/myuser/secondIncludeDir"
+ADDITIONAL_INCLUDE_PATHS=""
