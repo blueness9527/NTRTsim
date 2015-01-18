@@ -1,6 +1,4 @@
-##!/bin/bash
-
-# Copyright © 2012, United States Government, as represented by the
+# Copyright 2012, United States Government, as represented by the
 # Administrator of the National Aeronautics and Space Administration.
 # All rights reserved.
 # 
@@ -15,10 +13,6 @@
 # "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
 # either express or implied. See the License for the specific language
 # governing permissions and limitations under the License.
-
-# Purpose: Define general configuration directives for building
-# Date:    2014-08-24
-# Usage:   Copy/rename this file to '../build.conf' and run setup.sh
 
 #############################################
 #  Configuration -- edit below as needed.
