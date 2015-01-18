@@ -18,22 +18,26 @@
 #  Configuration -- edit below as needed.
 #############################################
 
-# Global install: /usr/local, env install: "$ENV_DIR"
-# By default, setup will download and install Anguelov's neural net library under your env directory.
-# If you have an existing install, you should change 
-# NEURALNET_INSTALL_PREFIX to what was used for installation (likely /usr/local).
-NEURALNET_INSTALL_PREFIX="$ENV_DIR"
+# A package's short name is used when creating folders for it in env.
+# If you modify this value after the package has already been built,
+# you'll need to run setup again or the relevant lib files
+# won't be found during compilation.
+NEURALNET_SHORT_NAME="neuralnet"
 
-# This is the location where you unzipped the package (or, where it will
-# be unzipped if necessary). 
-NEURALNET_PACKAGE_DIR="$ENV_DIR/build/neuralNet"
+# If INSTALL_TO_ENV is set to true, this package will be downloaded
+# and installed during set up. If it's set to false, it will not be.
+#
+# You should only set this to false if the library and include files are
+# already installed elsewhere on your system. If that's the case, be sure to
+# add the relevant directories to ADDITIONAL_LIB_PATHS and
+# ADDITIONAL_INCLUDE_PATHS in general.conf
+NEURALNET_INSTALL_TO_ENV=true
 
-# Location where Anguelov's neural net library is to be built if necessary, or where it was built if 
-# you're using an existing package. This doesn't need to be set unless Anguelov's neural net library is
-# not already installed. 
-# This library has subfolders in its zip, so if you're unpacking, the subfolder will be set for you
-NEURALNET_BUILD_DIR="$NEURALNET_PACKAGE_DIR/nnImplementationV2/Neural Network v2"
+# The URL for this package's source.
+NEURALNET_SRC_URL="http://dl.dropbox.com/u/18209754/Blog/nnImplementationV2.zip"
 
-# NEURALNET_URL can be either a web address or a local file address,
-# e.g. http://url.com/for/jsoncpp.tgz or file:///path/to/jsoncpp.tgz
-NEURALNET_URL="http://dl.dropbox.com/u/18209754/Blog/nnImplementationV2.zip"
+# The MD5 hash of the file's source download. 
+#
+# NOTE: If you wish to disable MD5 verification of downloaded packages,
+# set VERIFY_SRC_MD5 to false in general.conf
+NEURALNET_SRC_MD5="e303f4ac96ae4c06950f0a6b6c7094de"

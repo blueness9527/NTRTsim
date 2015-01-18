@@ -18,31 +18,32 @@
 #  Configuration -- edit below as needed.
 #############################################
 
-# Virtualenv installation prefix
-# Global install: /usr/local (default), env install: "$ENV_DIR"
-# If you've already installed the package under this prefix, this is the
-# only thing you'll need to set.
-VENV_INSTALL_PREFIX="$INSTALL_PREFIX"
+# A package's short name is used when creating folders for it in env.
+# If you modify this value after the package has already been built,
+# you'll need to run setup again or the relevant lib files
+# won't be found during compilation.
+VENV_SHORT_NAME="venv"
+
+# If INSTALL_TO_ENV is set to true, this package will be downloaded
+# and installed during set up. If it's set to false, it will not be.
+#
+# You should only set this to false if the library and include files are
+# already installed elsewhere on your system. If that's the case, be sure to
+# add the relevant directories to ADDITIONAL_LIB_PATHS and
+# ADDITIONAL_INCLUDE_PATHS in general.conf
+VENV_INSTALL_TO_ENV=true
+
+# The URL for this package's source.
+VENV_SRC_URL="https://pypi.python.org/packages/source/v/virtualenv/virtualenv-1.9.tar.gz"
+
+# The MD5 hash of the file's source download. 
+#
+# NOTE: If you wish to disable MD5 verification of downloaded packages,
+# set VERIFY_SRC_MD5 to false in general.conf
+VENV_SRC_MD5="e03b76752b8ce7eee67c6298414cac79"
 
 # Name of the virtualenv to be created
-VENV_NAME="venv"
-
-# Full path to the virtualenv
-VENV_PATH="$VENV_INSTALL_PREFIX/$VENV_NAME"
-
-# Location where packages are to be built if necessary, or where it was built if 
-# you're using an existing package. This doesn't need to be set unless boost is
-# not already installed. 
-VENV_BUILD_DIR="$ENV_DIR/build/virtualenv-1.9"
-
-# This is the location where you unzipped the package (or, where it will
-# be unzipped if necessary). 
-VENV_PACKAGE_DIR="$VENV_BUILD_DIR"
-
-# *_URL can be either a web address or a local file address,
-# e.g. http://url.com/for/package.tgz or file:///path/to/package.tgz
-VENV_URL="https://pypi.python.org/packages/source/v/virtualenv/virtualenv-1.9.tar.gz"
+VENV_NAME="ntrtsim_venv"
 
 # Path to python interpreter to use for setting up the virtualenv
 VENV_PYTHON_INTERPRETER="/usr/bin/python2.7"
-

@@ -18,11 +18,6 @@
 #  Configuration -- edit below as needed.
 #############################################
 
-# Uncomment this to use installations that are available to the whole system. 
-# NOTE: By default, setup installs bullet under env rather than $INSTALL_PREFIX
-#INSTALL_PREFIX="/usr/local"  
-
-# Uncomment this to install locally (under env/include and env/lib)
-# IMPORTANT: If you've previously installed to /usr/local, you'll need to 
-# delete your 'env' directory before running setup again.
-INSTALL_PREFIX="$ENV_DIR"  
+# Should package downloads have their MD5 hash verified prior
+# to unpacking and building?
+VERIFY_SRC_MD5=true

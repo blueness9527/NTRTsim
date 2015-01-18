@@ -18,21 +18,26 @@
 #  Configuration -- edit below as needed.
 #############################################
 
-# Global install: /usr/local, env install: "$ENV_DIR"
-# By default, setup will download and install GMockTest under your env directory.
-# If you have an existing GMockTest install, you should change 
-# GMOCKTEST_INSTALL_PREFIX to what was used for installation (likely /usr/local).
-GMOCKTEST_INSTALL_PREFIX="$ENV_DIR"
+# A package's short name is used when creating folders for it in env.
+# If you modify this value after the package has already been built,
+# you'll need to run setup again or the relevant lib files
+# won't be found during compilation.
+GMOCKTEST_SHORT_NAME="gmocktest"
 
-# Location where GMockTest is to be built if necessary, or where it was built if 
-# you're using an existing package. This doesn't need to be set unless gmocktest is
-# not already installed. 
-GMOCKTEST_BUILD_DIR="$ENV_DIR/build/gmocktest_1_7"
+# If INSTALL_TO_ENV is set to true, this package will be downloaded
+# and installed during set up. If it's set to false, it will not be.
+#
+# You should only set this to false if the library and include files are
+# already installed elsewhere on your system. If that's the case, be sure to
+# add the relevant directories to ADDITIONAL_LIB_PATHS and
+# ADDITIONAL_INCLUDE_PATHS in general.conf
+GMOCKTEST_INSTALL_TO_ENV=true
 
-# This is the location where you unzipped the package (or, where it will
-# be unzipped if necessary). 
-GMOCKTEST_PACKAGE_DIR="$GMOCKTEST_BUILD_DIR"
+# The URL for this package's source.
+GMOCKTEST_SRC_URL="https://googlemock.googlecode.com/files/gmock-1.7.0.zip"
 
-# GMOCKTEST_URL can be either a web address or a local file address,
-# e.g. http://url.com/for/gmocktest.tgz or file:///path/to/gmocktest.tgz
-GMOCKTEST_URL="https://googlemock.googlecode.com/files/gmock-1.7.0.zip"
+# The MD5 hash of the file's source download. 
+#
+# NOTE: If you wish to disable MD5 verification of downloaded packages,
+# set VERIFY_SRC_MD5 to false in general.conf
+GMOCKTEST_SRC_MD5="073b984d8798ea1594f5e44d85b20d66"

@@ -18,22 +18,26 @@
 #  Configuration -- edit below as needed.
 #############################################
 
-# Bullet installation prefix
-# Global install: /usr/local, env install: "$ENV_DIR"
-# By default, setup will download and install bullet under your env directory.
-# If you have an existing bullet install, you should change 
-# BULLET_INSTALL_PREFIX to what was used for installation (likely /usr/local).
-BULLET_INSTALL_PREFIX="$ENV_DIR"
+# A package's short name is used when creating folders for it in env.
+# If you modify this value after the package has already been built,
+# you'll need to run setup again or the relevant lib files
+# won't be found during compilation.
+BULLET_SHORT_NAME="bullet"
 
-# Location where bullet is to be built, or where it was built if you're using 
-# an existing package.
-BULLET_BUILD_DIR="$ENV_DIR/build/bullet-2.82-r2704"
+# If INSTALL_TO_ENV is set to true, this package will be downloaded
+# and installed during set up. If it's set to false, it will not be.
+#
+# You should only set this to false if the library and include files are
+# already installed elsewhere on your system. If that's the case, be sure to
+# add the relevant directories to ADDITIONAL_LIB_PATHS and
+# ADDITIONAL_INCLUDE_PATHS in general.conf
+BULLET_INSTALL_TO_ENV=true
 
-# This is the location where you unzipped the package (or, where it will be
-# unzipped if required). This will be the same as the build dir unless you did
-# an out-of-source build (not common for bullet).
-BULLET_PACKAGE_DIR="$BULLET_BUILD_DIR"
+# The URL for this package's source.
+BULLET_SRC_URL="http://bullet.googlecode.com/files/bullet-2.82-r2704.tgz"
 
-# BULLET_URL can be either a web address or a local file address, 
-# e.g. 'http://url.com/for/bullet.tgz' or 'file:///path/to/bullet.tgz'
-BULLET_URL="http://bullet.googlecode.com/files/bullet-2.82-r2704.tgz"
+# The MD5 hash of the file's source download. 
+#
+# NOTE: If you wish to disable MD5 verification of downloaded packages,
+# set VERIFY_SRC_MD5 to false in general.conf
+BULLET_SRC_MD5="70b3c8d202dee91a0854b4cbc88173e8"

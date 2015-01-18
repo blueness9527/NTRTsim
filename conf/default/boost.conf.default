@@ -18,21 +18,26 @@
 #  Configuration -- edit below as needed.
 #############################################
 
-# Boost installation prefix
-# Global install: /usr/local (default), env install: "$ENV_DIR"
-# If you've already installed the package under this prefix, this is the
-# only thing you'll need to set.
-BOOST_INSTALL_PREFIX="$INSTALL_PREFIX"
+# A package's short name is used when creating folders for it in env.
+# If you modify this value after the package has already been built,
+# you'll need to run setup again or the relevant lib files
+# won't be found during compilation.
+BOOST_SHORT_NAME="boost"
 
-# Location where bullet is to be built if necessary, or where it was built if 
-# you're using an existing package. This doesn't need to be set unless boost is
-# not already installed. 
-BOOST_BUILD_DIR="$ENV_DIR/build/boost_1_53_0"
+# If INSTALL_TO_ENV is set to true, this package will be downloaded
+# and installed during set up. If it's set to false, it will not be.
+#
+# You should only set this to false if the library and include files are
+# already installed elsewhere on your system. If that's the case, be sure to
+# add the relevant directories to ADDITIONAL_LIB_PATHS and
+# ADDITIONAL_INCLUDE_PATHS in general.conf
+BOOST_INSTALL_TO_ENV=true
 
-# This is the location where you unzipped the package (or, where it will
-# be unzipped if necessary). 
-BOOST_PACKAGE_DIR="$BOOST_BUILD_DIR"
+# The URL for this package's source.
+BOOST_SRC_URL="http://sourceforge.net/projects/boost/files/boost/1.53.0/boost_1_53_0.tar.gz"
 
-# BOOST_URL can be either a web address or a local file address,
-# e.g. http://url.com/for/boost.tgz or file:///path/to/boost.tgz
-BOOST_URL="http://sourceforge.net/projects/boost/files/boost/1.53.0/boost_1_53_0.tar.gz"
+# The MD5 hash of the file's source download. 
+#
+# NOTE: If you wish to disable MD5 verification of downloaded packages,
+# set VERIFY_SRC_MD5 to false in general.conf
+BOOST_SRC_MD5="57a9e2047c0f511c4dfcf00eb5eb2fbb"

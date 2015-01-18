@@ -18,21 +18,26 @@
 #  Configuration -- edit below as needed.
 #############################################
 
-# Global install: /usr/local, env install: "$ENV_DIR"
-# By default, setup will download and install JsonCPP under your env directory.
-# If you have an existing JsonCPP install, you should change 
-# JSONCPP_INSTALL_PREFIX to what was used for installation (likely /usr/local).
-JSONCPP_INSTALL_PREFIX="$ENV_DIR"
+# A package's short name is used when creating folders for it in env.
+# If you modify this value after the package has already been built,
+# you'll need to run setup again or the relevant lib files
+# won't be found during compilation.
+JSONCPP_SHORT_NAME="jsoncpp"
 
-# Location where JsonCPP is to be built if necessary, or where it was built if 
-# you're using an existing package. This doesn't need to be set unless jsoncpp is
-# not already installed. 
-JSONCPP_BUILD_DIR="$ENV_DIR/build/jsoncpp_3515db"
+# If INSTALL_TO_ENV is set to true, this package will be downloaded
+# and installed during set up. If it's set to false, it will not be.
+#
+# You should only set this to false if the library and include files are
+# already installed elsewhere on your system. If that's the case, be sure to
+# add the relevant directories to ADDITIONAL_LIB_PATHS and
+# ADDITIONAL_INCLUDE_PATHS in general.conf
+JSONCPP_INSTALL_TO_ENV=true
 
-# This is the location where you unzipped the package (or, where it will
-# be unzipped if necessary). 
-JSONCPP_PACKAGE_DIR="$JSONCPP_BUILD_DIR"
+# The URL for this package's source.
+JSONCPP_SRC_URL="https://github.com/open-source-parsers/jsoncpp/archive/3515db184a836ce73b99c064bcc83884570657c2.zip"
 
-# JSONCPP_URL can be either a web address or a local file address,
-# e.g. http://url.com/for/jsoncpp.tgz or file:///path/to/jsoncpp.tgz
-JSONCPP_URL="https://github.com/open-source-parsers/jsoncpp/archive/3515db184a836ce73b99c064bcc83884570657c2.zip"
+# The MD5 hash of the file's source download. 
+#
+# NOTE: If you wish to disable MD5 verification of downloaded packages,
+# set VERIFY_SRC_MD5 to false in general.conf
+JSONCPP_SRC_MD5="f2316ba7ce58eb8a2ccbe44264a4f6af"
