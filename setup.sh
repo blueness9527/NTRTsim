@@ -23,7 +23,7 @@ SCRIPT_PATH="`dirname \"$0\"`"
 SCRIPT_PATH="`( cd \"$SCRIPT_PATH\" && pwd )`"
 
 # Add the relative path from this script to the python scripts folder.
-pushd "${SCRIPT_PATH}/bin/setup/python_scripts/src" > /dev/null
+pushd "${SCRIPT_PATH}/bin/python_scripts/src" > /dev/null
 ##############################################################################
 #                          END DO NOT MODIFY                                 #
 ##############################################################################
